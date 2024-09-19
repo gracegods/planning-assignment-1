@@ -1,5 +1,5 @@
 (define (domain single-king)
-  (:requirements :strips)
+  (:requirements :strips :disjunctive-preconditions)
   (:predicates
     (at ?p ?x ?y) 
     (adjacent ?y1 ?y2)
