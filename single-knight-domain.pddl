@@ -1,0 +1,30 @@
+(define (domain single-knight)
+  (:requirements :strips :disjunctive-preconditions)
+  (:predicates
+    (at ?p ?x ?y) 
+    (occupied ?x ?y)
+    (adjacent1 ?y1 ?y2)
+    (adjacent2 ?y1 ?y2)
+  )
+  (:action move
+    :parameters (?p ?x1 ?y1 ?x2 ?y2)
+    :precondition (and 
+        (at ?p ?x1 ?y1) 
+        (not (occupied ?x2 ?y2))
+        (or (and (= ?x1 ?x2) (adjacent ?y1 ?y2))
+            (and (= ?x1 ?x2) (adjacent ?y2 ?y1))
+            (and (= ?y1 ?y2) (adjacent ?x1 ?x2))
+            (and (= ?y1 ?y2) (adjacent ?x2 ?x1))
+            (and (adjacent ?x1 ?x2) (adjacent ?y1 ?y2))
+            (and (adjacent2 ?x1 ?x2) (adjacent2 ?y1 ?y2))
+        )
+    )
+    :effect (and 
+        (not (at ?p ?x1 ?y1)) 
+        (at ?p ?x2 ?y2)
+        (occupied ?x2 ?y2)
+        (not (occupied ?x1 ?y1))
+    )
+  )
+)
+
