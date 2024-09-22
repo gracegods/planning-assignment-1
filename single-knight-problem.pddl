@@ -1,16 +1,12 @@
 (define (problem single-knight-problem) 
     (:domain knight)
-
     (:objects
     knight
     x1 x2 x3 x4 x5 x6 x7
     y1 y2 y3 y4 y5 y6 y7 y8
     )
-
     (:init
        (at knight x1 y1)
-       (occupied x2 y3)
-       (occupied x6 y6)
        (delta1 x1 x2) 
        (delta1 x2 x3) 
        (delta1 x3 x4) 
@@ -58,16 +54,9 @@
        (delta2 y5 y3)
        (delta2 y6 y4)
        (delta2 y7 y5)
-       (delta2 y8 y6)      
+       (delta2 y8 y6)
+       (occupied x2 y3)
+       (occupied x6 y6)
     )
-
     (:goal (at knight x7 y8))
-
-    )
 )
-
-
-
-
-
-
