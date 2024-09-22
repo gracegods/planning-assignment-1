@@ -1,12 +1,12 @@
 (define (problem single-king) 
-    (:domain single-king)
+    (:domain king)
     (:objects
     king
     x1 x2 x3 x4 x5 x6 x7
     y1 y2 y3 y4 y5 y6 y7 y8
     )
     (:init
-       (at king x1 y1)
+        (at king x1 y1)
         (adjacent x1 x2)
         (adjacent x2 x3)
         (adjacent x3 x4)
@@ -35,6 +35,7 @@
         (adjacent y2 y1)
         (occupied x7 y7)
         (occupied x6 y7)
+        (occupied x1 y1)
     )
     (:goal (at king x7 y8))
 )

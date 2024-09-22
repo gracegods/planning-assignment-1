@@ -1,4 +1,4 @@
-(define (domain single-king)
+(define (domain king)
   (:requirements :strips :disjunctive-preconditions)
   (:predicates
     (at ?p ?x ?y) 
